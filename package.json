@@ -1,0 +1,14 @@
+{
+  "name": "cougarbot",
+  "version": "1.0.0",
+  "description": "An application that handles all basketball related sotware for the Cougars Basketball Team",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kristian Walsh",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^5.0.2"
+  }
+}
