@@ -78,7 +78,7 @@ export class GoogleCalendar {
 	}
 
 	// Retrieves a list of events from a specified calendar
-	async getEvent(): Promise<CalendarEvent | null | undefined> {
+	async getEvent(): Promise<CalendarEvent> {
 
 		try {
 			this.auth = await authorize();
@@ -95,7 +95,7 @@ export class GoogleCalendar {
 			const events = res.data.items;
 			if (!events || events.length === 0) {
 				console.log('No upcoming events found.');
-				return null;
+				throw new Error('No upcoming events found.');
 			}
 			events.map((event: any, i: any) => {
 				if (event.summary.includes('Basketball')) {
@@ -103,17 +103,15 @@ export class GoogleCalendar {
 					return {
 						summary: event.summary,
 						location: event.location,
-						description: event.description
+						description: event.description,
+						startTime: event.start.dateTime || event.start.date
 					};
 				}
-				const start = event.start.dateTime || event.start.date;
-				console.log(`${start} - ${event.summary}`);
-				console.log(`location - ${event.location}`);
-				console.log(`description - ${event.description}`);
 			});
+			throw new Error('No basketball game found');
 		} catch (error) {
 			console.error('Cannot get events from calendar', error);
-			return null
+			throw new Error('Cannot get events from calendar');
 		}
 	}
 }
