@@ -3,6 +3,7 @@ export interface CalendarEvent {
     summary: string;
     location: string;
     description: string;
+    startTime: string;
 }
 
 export interface BasketballGame {
@@ -12,4 +13,14 @@ export interface BasketballGame {
     location: string;
     courtNumber: string;
     whoIsPaying: string;
+}
+
+export interface Player {
+    playerId: string;
+    playerName: string;
+    availableToPlay: number;
+}
+
+export interface PaymentIndex {
+    paymentIndex: number;
 }
