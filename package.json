@@ -25,7 +25,9 @@
   },
   "dependencies": {
     "@google-cloud/local-auth": "^2.1.0",
+    "better-sqlite3": "^8.2.0",
     "googleapis": "^105.0.0",
+    "sqlite": "^4.1.2",
     "sqlite3": "^5.1.6"
   }
 }
