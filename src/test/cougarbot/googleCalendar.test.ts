@@ -6,6 +6,10 @@ describe('googleCalendar', () => {
 
   test('should return a string', async () => {
     const result = await googleCalendar.getEvent();
-     expect(result).toBe('string');
-  });
+     expect(result).toContain('summary')
+     expect(result).toContain('location')
+     expect(result).toContain('description')
+     expect(result).toContain('startTime')
+
+    });
 });

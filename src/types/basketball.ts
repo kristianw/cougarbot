@@ -6,6 +6,14 @@ export interface CalendarEvent {
     startTime: string;
 }
 
+export interface GameSummary {
+    gameType: string;
+    homeTeam: string;
+    awayTeam: string;
+    location: string;
+    courtNumber: string;
+}
+
 export interface BasketballGame {
     date: string;
     homeTeam: string;
