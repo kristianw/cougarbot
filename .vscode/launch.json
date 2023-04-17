@@ -5,16 +5,14 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Launch via NPM",
+            "type": "node",
             "request": "launch",
-            "runtimeArgs": [
-                "test",
-            ],
-            "runtimeExecutable": "npm",
-            "skipFiles": [
-                "<node_internals>/**"
-            ],
-            "type": "node"
+            "name": "Launch Program",
+            "program": "${workspaceFolder}/src/cougarbot/integrations/googleCalendar.ts",
+            "preLaunchTask": "tsc: build - tsconfig.json",
+            "outFiles": [
+                "${workspaceFolder}/out/**/*.js"
+            ]
         }
     ]
 }
